@@ -1,0 +1,93 @@
+:root{
+    --main-background: hsl(233, 47%, 7%);
+    --card-background: hsl(244, 38%, 16%);
+    --special-color: hsl(277, 64%, 61%);
+
+}
+*{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-size: 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-background);
+}
+
+.card{
+    max-width: 75em;
+   background-color: var(--card-background);
+   border-radius: 1em;
+}
+.card .container {
+  display: grid;
+  grid-template-columns: repeat(2 , minmax(36.8em ,1fr));
+   
+}
+.card .container section:nth-child(2) img{
+ height: 100%;
+ width: 100%;
+ border-top-right-radius: 1em;
+ border-bottom-right-radius: 1em;
+
+}
+
+.card .container section:nth-child(2) span{
+    font-size: 40px;
+    font-weight: 700;
+}
+.card .container section:first-child{
+    width: 100%;
+    padding: 2em  4em;
+    text-align: center;
+}
+.card .container section:first-child .share{
+ display: flex;
+ justify-content: space-between;
+ margin-top: 2em;
+}
+.card .container section:first-child .share h4{
+    font-size: 30px;
+}
+.card .container section:first-child p{
+    color: hsla(0, 0%, 100%, 0.6);
+    line-height: 1.6;
+}
+.card .container section h1 ,h4{
+    color: white;
+}
+.card .container section:first-child h1{
+ font-size: 40px;
+    font-weight: 700;
+}
+.card .container section:first-child h1 + p{
+  padding:  0 3.5em;
+  line-height: 1.7;
+}
+.card .container section .share p{
+    margin-top:-2.5em ;
+}
+.card .container section h1 span{
+    color: var(--special-color);
+}
+@media(max-width:375px){
+     .card .container{
+      grid-template-columns: repeat(1 ,30em) ;
+      grid-template-rows: 18em 36em;
+     
+    }
+    .card{
+        max-width: 30em;
+    }
+    .card .container section:nth-child(2){
+        order: 1;
+    }
+    .card .container section:first-child{
+        order: 2;
+    }
+}
