@@ -19,75 +19,82 @@ body{
     background-color: var(--main-background);
 }
 
-.card{
+main{
     max-width: 75em;
    background-color: var(--card-background);
    border-radius: 1em;
 }
-.card .container {
+ .container {
   display: grid;
   grid-template-columns: repeat(2 , minmax(36.8em ,1fr));
    
 }
-.card .container section:nth-child(2) img{
+.container section:nth-child(2) img{
  height: 100%;
  width: 100%;
- border-top-right-radius: 1em;
- border-bottom-right-radius: 1em;
 
+ object-fit: cover;
+ mix-blend-mode: multiply;
+ opacity: 0.8;
 }
-
-.card .container section:nth-child(2) span{
+ .container section:nth-child(2){
+    background-color: var(--special-color);
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+ }
+ .container section:nth-child(2) span{
     font-size: 40px;
     font-weight: 700;
 }
-.card .container section:first-child{
+ .container section:first-child{
     width: 100%;
     padding: 2em  4em;
     text-align: center;
+   
 }
-.card .container section:first-child .share{
+ .container section:first-child .share{
  display: flex;
- justify-content: space-between;
- margin-top: 2em;
+ justify-content: space-around;
+ margin-top: 8em;
 }
-.card .container section:first-child .share h4{
+ .container section:first-child .share p:first-child{
     font-size: 30px;
+    color: white;
 }
-.card .container section:first-child p{
+ .container section:first-child p{
     color: hsla(0, 0%, 100%, 0.6);
     line-height: 1.6;
 }
-.card .container section h1 ,h4{
+ .container section h1 {
     color: white;
 }
-.card .container section:first-child h1{
+ .container section:first-child h1{
  font-size: 40px;
     font-weight: 700;
 }
-.card .container section:first-child h1 + p{
+ .container section:first-child h1 + p{
   padding:  0 3.5em;
   line-height: 1.7;
 }
-.card .container section .share p{
+ .container section .share p{
     margin-top:-2.5em ;
 }
-.card .container section h1 span{
+ .container section h1 span{
     color: var(--special-color);
 }
 @media(max-width:375px){
-     .card .container{
+      .container{
       grid-template-columns: repeat(1 ,30em) ;
       grid-template-rows: 18em 36em;
      
     }
-    .card{
+    main{
         max-width: 30em;
     }
-    .card .container section:nth-child(2){
+     .container section:nth-child(2){
         order: 1;
     }
-    .card .container section:first-child{
+     .container section:first-child{
         order: 2;
     }
 }
